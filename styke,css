@@ -1,0 +1,296 @@
+/* Thiết lập Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f2f5;
+    color: #333333;
+    line-height: 1.6;
+    padding-top: 65px; /* Đẩy nội dung xuống tránh bị Fixed Header đè lên */
+}
+
+/* 1. Header cố định (Fixed Header) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #1a202c;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo-icon {
+    color: #e53e3e;
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.logo-text strong {
+    color: #ecc94b;
+}
+
+/* Head-link & Hiệu ứng hover: Bỏ gạch chân, bôi đậm và đổi màu */
+.head-link ul {
+    list-style: none;
+    display: flex;
+}
+
+.head-link ul li {
+    margin-left: 20px;
+}
+
+.head-link ul li a {
+    color: #cbd5e0;
+    text-decoration: none; /* Loại bỏ gạch chân */
+    font-size: 15px;
+    padding: 8px 12px;
+    transition: all 0.25s ease;
+}
+
+.head-link ul li a:hover {
+    font-weight: bold;     /* Bôi đậm khi rê chuột */
+    color: #ecc94b;        /* Đổi màu vàng nổi bật */
+    border-bottom: 2px solid #ecc94b;
+}
+
+/* 2. Layout Content: 2 cột bằng Flexbox */
+.main-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+}
+
+/* Left Content: Danh sách phim */
+.left-content {
+    flex: 0 0 350px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    height: fit-content;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 18px;
+}
+
+.search-box input:focus {
+    border-color: #3182ce;
+}
+
+.left-content h3 {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.video-list {
+    list-style: none;
+}
+
+.video-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f7fafc;
+    border: 1px solid #edf2f7;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.video-item:hover {
+    background-color: #edf2f7;
+    transform: translateY(-2px);
+}
+
+.video-item.active {
+    background-color: #ebf8ff;
+    border-color: #3182ce;
+}
+
+.video-item img {
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.video-info h4 {
+    font-size: 13px;
+    color: #2d3748;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.video-views {
+    font-size: 12px;
+    color: #718096;
+}
+
+/* Right Content: Video chính và iFrame */
+.right-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.player-container video {
+    width: 100%;
+    max-height: 480px;
+    border-radius: 8px;
+    background-color: #000000;
+    display: block;
+}
+
+.current-video-details {
+    margin-top: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.current-video-details h2 {
+    font-size: 20px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.video-stats {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 12px;
+}
+
+.badge {
+    background-color: #3182ce;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.badge.no-ads {
+    background-color: #38a169;
+}
+
+.video-desc {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Khu vực Video nhúng iFrame */
+.embedded-section {
+    margin-top: 24px;
+}
+
+.embedded-section h3 {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 45%; /* Tỉ lệ hiển thị video responsive */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000000;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 3. Footer */
+.main-footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* 4. Responsive Design cho Tablet & Mobile */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column-reverse; /* Đưa khung video lên trước trên tablet */
+    }
+
+    .left-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .iframe-container {
+        padding-bottom: 56.25%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+    }
+
+    body {
+        padding-top: 110px;
+    }
+
+    .head-link ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .head-link ul li {
+        margin: 4px 8px;
+    }
+
+    .video-item img {
+        width: 80px;
+        height: 55px;
+    }
+}
