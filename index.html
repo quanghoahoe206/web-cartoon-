@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Hoạt Hình Thiếu Nhi - Cartoon Kids TV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header cố định: Logo bên trái & Thanh liên kết Head-link bên phải -->
+    <header class="main-header">
+        <div class="logo">
+            <span class="logo-icon">&#9658;</span>
+            <span class="logo-text">Cartoon<strong>Kids</strong></span>
+        </div>
+
+        <nav class="head-link">
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#moinhat">Mới cập nhật</a></li>
+                <li><a href="#xemnhieu">Xem nhiều nhất</a></li>
+                <li><a href="#theloai">Thể loại</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. Khu vực Content chính: 2 cột (Left Content & Right Content) -->
+    <div class="main-container">
+        
+        <!-- Left Content: Menu hiển thị danh sách video có sẵn & ô tìm kiếm -->
+        <aside class="left-content">
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm phim hoạt hình..." aria-label="Tìm kiếm">
+            </div>
+
+            <h3>Danh Sách Phim Chọn Lọc</h3>
+            <ul class="video-list">
+                <li class="video-item active">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=120&q=80" alt="Big Buck Bunny">
+                    <div class="video-info">
+                        <h4>Big Buck Bunny - Chú Thỏ Thông Minh</h4>
+                        <span class="video-views">1.2M lượt xem</span>
+                    </div>
+                </li>
+                <li class="video-item">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=120&q=80" alt="Doraemon">
+                    <div class="video-info">
+                        <h4>Doraemon: Chú Mèo Máy Đến Từ Tương Lai</h4>
+                        <span class="video-views">950K lượt xem</span>
+                    </div>
+                </li>
+                <li class="video-item">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=120&q=80" alt="Tom & Jerry">
+                    <div class="video-info">
+                        <h4>Tom & Jerry: Những Cuộc Rượt Đuổi Hài Hước</h4>
+                        <span class="video-views">820K lượt xem</span>
+                    </div>
+                </li>
+                <li class="video-item">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=120&q=80" alt="Larva">
+                    <div class="video-info">
+                        <h4>Larva - Những Chú Ấu Trùng Tinh Nghịch</h4>
+                        <span class="video-views">710K lượt xem</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Right Content: Khu vực xem video chính và nhúng YouTube -->
+        <main class="right-content">
+            <!-- Video Player chính (sử dụng thẻ <video>) -->
+            <div class="player-container">
+                <video controls poster="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video HTML5.
+                </video>
+            </div>
+
+            <div class="current-video-details">
+                <h2>Big Buck Bunny - Chú Thỏ Vui Nhộn (Thuyết Minh HD 720p)</h2>
+                <div class="video-stats">
+                    <span>Lượt xem: 1.250.320 lượt</span> &bull; 
+                    <span>Cập nhật: 2 ngày trước</span> &bull; 
+                    <span class="badge">FullHD 1080p</span> &bull;
+                    <span class="badge no-ads">Không quảng cáo</span>
+                </div>
+                <p class="video-desc">
+                    Bộ phim hoạt hình 3D kinh điển dành cho thiếu nhi với nội dung giáo dục bảo vệ môi trường, mang lại tiếng cười sảng khoái và thông điệp nhân văn cho trẻ nhỏ.
+                </p>
+            </div>
+
+            <!-- Video mở rộng nhúng YouTube qua thẻ <iframe> -->
+            <div class="embedded-section">
+                <h3>Video liên quan nhúng từ YouTube (Thẻ &lt;iframe&gt;)</h3>
+                <div class="iframe-container">
+                    <iframe 
+                        src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" 
+                        title="Big Buck Bunny Clip" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- 3. Footer: Thông tin bản quyền -->
+    <footer class="main-footer">
+        <p>&copy; 2026 CartoonKids TV. Trang web chiếu phim hoạt hình thiếu nhi an toàn, không quảng cáo và chọn lọc.</p>
+    </footer>
+
+</body>
+</html>
